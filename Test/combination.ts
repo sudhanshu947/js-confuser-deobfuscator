@@ -13,15 +13,24 @@ async function iterateBooleanOptionsCombinations(
 ) {
     const totalCombinations = Math.pow(2, keys.length);
 
+    const indices = Array.from({ length: totalCombinations }, (_, i) => i);
+
+    for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+
     const combination: Record<string, boolean> = {};
 
-    for (let i = 0; i < totalCombinations; i++) {
+    for (const i of indices) {
         for (let j = 0; j < keys.length; j++)
             combination[keys[j]] = Boolean((i >> j) & 1);
 
         await callback(combination);
     }
 }
+
 
 const LOG_FILE_PATH = path.join(__dirname, "failed_options.jsonl");
 
