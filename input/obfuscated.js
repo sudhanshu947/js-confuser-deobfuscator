@@ -1,12 +1,1 @@
-function greet(name, output, breet) {
-  if (!breet) {
-    breet = function (name, output) {
-      output = "Hello " + name + "!";
-      console.log(output);
-    };
-  }
-  output = "Hello " + name + "!";
-  console.log(output);
-  breet(output);
-}
-greet("Internet User");
+var __p_WoKx_cache=Object["create"](null);var __p_0vcn_payload;function __p_5Bt8_dispatcher_0(name,flagArg,returnTypeArg,fnLengths={"BzYjRZ":1}){var output;var fns={"BzYjRZ":function(){var[name]=__p_0vcn_payload;var output="Hello "+name+"!";console["log"](output)}};if(flagArg==="fGGIpKJIZ8"){__p_0vcn_payload=[]}if(flagArg==="vTv6RaALLl"){function createFunction(){var fn=function(...args){__p_0vcn_payload=args;return fns[name].apply(this)};var fnLength=fnLengths[name];if(fnLength){__p_GbPM_d_fnLength(fn,fnLength)}return fn}output=__p_WoKx_cache[name]||(__p_WoKx_cache[name]=createFunction())}else{output=fns[name]()}if(returnTypeArg==="xgvsgEjwDK"){return{"m6BVGdP0tu":output}}else{return output}}function __p_GbPM_d_fnLength(fn,length=1){Object["defineProperty"](fn,"length",{"value":length,"configurable":false});return fn}__p_0vcn_payload=["Internet User"],__p_5Bt8_dispatcher_0("BzYjRZ");
